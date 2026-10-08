@@ -1,0 +1,85 @@
+{
+  "apiVersion": "fleet.cattle.io/v1alpha1",
+  "kind": "HelmOp",
+  "metadata": {
+    "name": "suse-ai-suse-ai-observability-extension-suse-ai-observab-134rr4",
+    "namespace": "fleet-default"
+  },
+  "spec": {
+    "defaultNamespace": "suse-ai-observability-extension-system",
+    "helm": {
+      "version": "2.2.0",
+      "repo": "oci://dp.apps.rancher.io/charts/suse-ai-observability-extension",
+      "releaseName": "suse-ai-observability-extension",
+      "values": {
+        "apiToken": "",
+        "existingSecret": "",
+        "existingSecretKey": "",
+        "fullnameOverride": "",
+        "global": {
+          "imagePullSecrets": [
+            {
+              "name": "suse-ai-pull-combined"
+            }
+          ],
+          "imageRegistry": ""
+        },
+        "image": {
+          "pullPolicy": "IfNotPresent",
+          "registry": "dp.apps.rancher.io",
+          "repository": "containers/suse-ai-observability-extension-setup",
+          "tag": "2.2.0-7.46"
+        },
+        "kubernetesClusters": [],
+        "nameOverride": "",
+        "podAnnotations": {},
+        "podLabels": {},
+        "podSecurityContext": {},
+        "resources": {},
+        "securityContext": {
+          "allowPrivilegeEscalation": false,
+          "capabilities": {
+            "drop": [
+              "ALL"
+            ]
+          },
+          "runAsNonRoot": false,
+          "seccompProfile": {
+            "type": "RuntimeDefault"
+          }
+        },
+        "serverUrl": "",
+        "serviceAccount": {
+          "annotations": {},
+          "name": ""
+        },
+        "tls": {
+          "certificates": {
+            "ca": ""
+          },
+          "enabled": false,
+          "existingSecret": "",
+          "skipVerify": false
+        },
+        "tokenType": "api",
+        "imagePullSecrets": [
+          {
+            "name": "suse-ai-pull-combined"
+          }
+        ]
+      },
+      "disablePreProcess": true,
+      "takeOwnership": true
+    },
+    "targets": [
+      {
+        "clusterSelector": {
+          "matchLabels": {
+            "management.cattle.io/cluster-name": "c-zbgb5"
+          }
+        }
+      }
+    ],
+    "helmSecretName": "application-collection-auth"
+  }
+}
