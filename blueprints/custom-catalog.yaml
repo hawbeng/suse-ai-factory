@@ -1,0 +1,10 @@
+apiVersion: ai-factory.suse.com/v1alpha1
+kind: BlueprintCatalog
+metadata:
+  name: custom-catalog
+spec:
+  displayName: Custom Blueprints
+  description: Customized Blueprint with SUSE AI Factory.
+  categories: [rag, inference, agents]
+  blueprints:
+    - name: simple-chatbot-with-rag
