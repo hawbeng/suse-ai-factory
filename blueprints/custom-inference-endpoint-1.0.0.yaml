@@ -32,14 +32,14 @@
 apiVersion: ai-factory.suse.com/v1alpha1
 kind: Blueprint
 metadata:
-  name: suse-inference-endpoint-1-0-1
+  name: custom-inference-endpoint-1-0-0
   labels:
-    ai-factory.suse.com/blueprint-name: suse-inference-endpoint
-    ai-factory.suse.com/blueprint-version: 1.0.1
+    ai-factory.suse.com/blueprint-name: custom-inference-endpoint
+    ai-factory.suse.com/blueprint-version: 1.0.0
 spec:
-  displayName: SUSE Inference Endpoint
-  source: SUSE
-  version: 1.0.1
+  displayName: Custom Inference Endpoint
+  source: Custom
+  version: 1.0.0
   description: |-
     Turnkey production inference LLM gateway that fronts one or more vLLM
     model backends behind a single OpenAI-compatible API, adding
