@@ -51,7 +51,7 @@
               "email": "none@example.com",
               "environment": "staging",
               "ingress": {
-                "class": ""
+                "class": "nginx"
               }
             },
             "source": "suse-private-ai"
