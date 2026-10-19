@@ -1,0 +1,148 @@
+{
+  "apiVersion": "fleet.cattle.io/v1alpha1",
+  "kind": "HelmOp",
+  "metadata": {
+    "name": "suse-ai-pytorch-pytorch-system-c-j45lr",
+    "namespace": "fleet-default"
+  },
+  "spec": {
+    "defaultNamespace": "pytorch-system",
+    "helm": {
+      "version": "0.4.0",
+      "repo": "oci://dp.apps.rancher.io/charts/pytorch",
+      "releaseName": "pytorch",
+      "values": {
+        "affinity": {},
+        "configMapExtFiles": "",
+        "entrypointscript": {
+          "arguments": [],
+          "filename": ""
+        },
+        "fullnameOverride": "",
+        "gitClone": {
+          "enabled": false,
+          "repository": "",
+          "revision": "",
+          "secretName": ""
+        },
+        "global": {
+          "imagePullSecrets": [
+            {
+              "name": "suse-ai-pull-combined"
+            }
+          ],
+          "imageRegistry": ""
+        },
+        "gpu": {
+          "enabled": false,
+          "mig": {
+            "devices": {},
+            "enabled": false
+          },
+          "number": 1,
+          "nvidiaResource": "nvidia.com/gpu",
+          "type": "nvidia"
+        },
+        "image": {
+          "pullPolicy": "IfNotPresent",
+          "registry": "dp.apps.rancher.io",
+          "repository": "containers/pytorch",
+          "tag": "2.14.0-nvidia-2.7"
+        },
+        "imagePullSecrets": [
+          {
+            "name": "suse-ai-pull-combined"
+          }
+        ],
+        "ingress": {
+          "annotations": {},
+          "className": "",
+          "enabled": false,
+          "hosts": [
+            {
+              "host": "chart-example.local",
+              "paths": [
+                {
+                  "path": "/",
+                  "pathType": "ImplementationSpecific"
+                }
+              ]
+            }
+          ],
+          "tls": []
+        },
+        "livenessProbe": {
+          "enabled": false,
+          "failureThreshold": 6,
+          "initialDelaySeconds": 5,
+          "periodSeconds": 5,
+          "successThreshold": 1,
+          "timeoutSeconds": 20
+        },
+        "nameOverride": "",
+        "nodeSelector": {},
+        "persistence": {
+          "accessModes": [
+            "ReadWriteOnce"
+          ],
+          "annotations": {},
+          "enabled": false,
+          "existingClaim": "",
+          "size": "30Gi",
+          "storageClass": "",
+          "subPath": "",
+          "volumeMode": "",
+          "volumeName": ""
+        },
+        "podAnnotations": {},
+        "podLabels": {},
+        "podSecurityContext": {},
+        "readinessProbe": {
+          "enabled": false,
+          "failureThreshold": 6,
+          "initialDelaySeconds": 5,
+          "periodSeconds": 5,
+          "successThreshold": 1,
+          "timeoutSeconds": 20
+        },
+        "resources": {
+          "limits": {},
+          "requests": {}
+        },
+        "runtimeClassName": "",
+        "securityContext": {},
+        "service": {
+          "annotations": {},
+          "containerPort": null,
+          "enabled": false,
+          "loadBalancerClass": null,
+          "loadBalancerIP": null,
+          "nodePort": "",
+          "port": null,
+          "type": "ClusterIP"
+        },
+        "serviceAccount": {
+          "annotations": {},
+          "automount": true,
+          "create": false,
+          "name": ""
+        },
+        "tolerations": [],
+        "volumeMounts": [],
+        "volumes": []
+      },
+      "disablePreProcess": true,
+      "takeOwnership": true
+    },
+    "targets": [
+      {
+        "clusterSelector": {
+          "matchLabels": {
+            "management.cattle.io/cluster-name": "c-j45lr"
+          }
+        }
+      }
+    ],
+    "helmSecretName": "application-collection-auth"
+  }
+}
