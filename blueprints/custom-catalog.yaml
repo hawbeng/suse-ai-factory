@@ -7,4 +7,4 @@ spec:
   description: Customized Blueprint with SUSE AI Factory.
   categories: [rag, inference, agents]
   blueprints:
-    - name: simple-chatbot-with-rag
+    - name: custom-inference-endpoint
